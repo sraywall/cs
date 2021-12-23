@@ -1,0 +1,17 @@
+Array                   Insert                  Append
+
+tinyArray:              6.821 μs                11.182 μs
+smallArray:             41.83 μs                34.919 μs
+mediumArray:            353.737 μs              147.689 μs
+largeArray:             17.599934 ms            2.394595 ms
+extraLargeArray:        1.7828413269999999 s    4.028674 ms
+
+
+The Append function scales better with a big O(n). While it starts off almost half as fast 
+for the tiny array, it's already a bit faster by the small array and
+by the extraLargeArray it's only 4 miliseconds while the Insert method
+takes nearly two entire seconds that's like 500 times faster.
+
+This is because the unshift array method that the Insert function utilizes
+essentially has a loop in the implementation, causing the algorithm to
+be O(n^2) because its equivalent to a nested loop over the inputed array.
